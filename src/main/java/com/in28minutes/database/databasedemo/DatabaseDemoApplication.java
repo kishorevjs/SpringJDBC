@@ -29,5 +29,6 @@ public class DatabaseDemoApplication implements CommandLineRunner {
 		logger.info("User id 10001 is {}", dao.getById(10001));
 		logger.info("User with the location {}", dao.findByLocation("USA"));
 		//logger.info("Users with date of birth {}", dao.findByBirthDate(java.sql.Date()));
+		logger.info("Id deleted 10007 - no.of rows deleted {}", dao.deleteById(10007));
 	}
 }
