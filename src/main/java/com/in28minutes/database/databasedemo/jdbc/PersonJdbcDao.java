@@ -23,4 +23,9 @@ public class PersonJdbcDao {
         return jdbcTemplate.queryForObject("select * from PERSON where id=?", new Object[]{id},
                 new BeanPropertyRowMapper<Person>(Person.class));
     }
+
+    public List<Person> findByLocation(String location){
+        return jdbcTemplate.query("select * from person where location=?", new Object[]{location},
+                new BeanPropertyRowMapper<Person>(Person.class));
+    }
 }
