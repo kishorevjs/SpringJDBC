@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.List;
 
 @Repository
@@ -26,6 +27,11 @@ public class PersonJdbcDao {
 
     public List<Person> findByLocation(String location){
         return jdbcTemplate.query("select * from person where location=?", new Object[]{location},
+                new BeanPropertyRowMapper<Person>(Person.class));
+    }
+
+    public List<Person> findByBirthDate(Date date){
+        return jdbcTemplate.query("select * from person where birth_date=?", new Object[]{date},
                 new BeanPropertyRowMapper<Person>(Person.class));
     }
 }

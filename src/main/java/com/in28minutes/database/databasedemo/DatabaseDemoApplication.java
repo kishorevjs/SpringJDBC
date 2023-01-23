@@ -8,6 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 @SpringBootApplication
 public class DatabaseDemoApplication implements CommandLineRunner {
 
@@ -23,5 +28,6 @@ public class DatabaseDemoApplication implements CommandLineRunner {
 		logger.info("All users --> {}", dao.findAll());
 		logger.info("User id 10001 is {}", dao.getById(10001));
 		logger.info("User with the location {}", dao.findByLocation("USA"));
+		//logger.info("Users with date of birth {}", dao.findByBirthDate(java.sql.Date()));
 	}
 }
