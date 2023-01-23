@@ -29,8 +29,8 @@ public class SpringJPADemoApplication implements CommandLineRunner {
 		logger.info("Update id is 10003- {}",
 				personJpaRepo.update(new Person(10003, "Vutukury", "India", new Date())));
 		personJpaRepo.deleteById(10003);
-		/*logger.info("All users --> {}", dao.findAll());
-		logger.info("User with the location {}", dao.findByLocation("USA"));
+		logger.info("All users --> {}", personJpaRepo.findAll());
+		/*logger.info("User with the location {}", dao.findByLocation("USA"));
 		//logger.info("Users with date of birth {}", dao.findByBirthDate(java.sql.Date()));
 		logger.info("Id deleted 10007 - no.of rows deleted {}", dao.deleteById(10007));
 		*/

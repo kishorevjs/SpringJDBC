@@ -1,13 +1,11 @@
 package com.in28minutes.database.databasedemo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
+@NamedQuery(name = "find_all_persons", query = "select p from Person p")
 @Table(name = "person")
 public class Person {
 
